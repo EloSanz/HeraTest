@@ -1,0 +1,35 @@
+<h2 class = "mb-5">Multimediales</h2>
+
+<div class ="text-end">
+    <button class ="btn btn-primary" routerLink = "/new">
+        Nuevo multimedial
+    </button>
+</div>
+
+
+<table class="table table-hover">
+    
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>password</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @for(multimedial of multimediales; track multimedial.id){
+            <tr>
+                <td>{{multimedial.id}}</td>
+                <td>{{multimedial.username}}</td>
+                <td>{{multimedial.email}}</td>
+                <td>{{multimedial.password}}</td>
+
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
