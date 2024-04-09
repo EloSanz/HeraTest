@@ -7,6 +7,7 @@ CREATE TABLE Educational_Level (
 -- Crear tabla Multimedial
 CREATE TABLE Multimedial (
     id SERIAL PRIMARY KEY,
+    competencia_id INTEGER REFERENCES Competencias(id),
     username VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
