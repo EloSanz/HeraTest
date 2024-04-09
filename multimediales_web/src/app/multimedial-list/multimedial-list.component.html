@@ -11,10 +11,18 @@
     
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Username</th>
+            <th>Id</th>
+            <th>Nombre de Usuario</th>
             <th>Email</th>
-            <th>password</th>
+            <th>Contraseña</th>
+            <th>Dirección</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Nivel de Educación</th>
+            <th>Institución de estudios</th>
+            <th>Foto de perfil</th>
+            <th>Competencias</th>
+            <th>Eliminar</th>
+            <th>Editar</th>
         </tr>
     </thead>
     
@@ -25,7 +33,27 @@
                 <td>{{multimedial.username}}</td>
                 <td>{{multimedial.email}}</td>
                 <td>{{multimedial.password}}</td>
-
+                <td>{{multimedial.address}}</td>
+                <td>{{multimedial.birthdate}}</td>
+                <td>{{multimedial.educational_level_id}}</td>
+                <td>{{multimedial.graduation_institution}}</td>
+                <td>{{multimedial.profile_photo}}</td>
+                <td>
+                    <button class="btn btn-primary" [routerLink]="['/competencias']">
+                        Competencias
+                        </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="eliminarMultimedial(multimedial.id)">
+                        Eliminar
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="editarMultimedial(multimedial.id, multimedial)">
+                        Editar
+                    </button>
+                </td>
+                
             </tr>
 
         }

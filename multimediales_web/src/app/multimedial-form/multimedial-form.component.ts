@@ -19,6 +19,11 @@ export default class MultimedialFormComponent {
     username: ['', [Validators.required]],
     email: ['', [Validators.required]],
     password: ['', [Validators.required]],
+    address: ['', [Validators.required]],
+    birthdate: ['',[Validators.required]],
+    educational_level_id: ['',[Validators.required]],
+    graduation_institution: ['',[Validators.required]],
+    profile_photo: ['',[Validators.required]]
   });
 
   create(){

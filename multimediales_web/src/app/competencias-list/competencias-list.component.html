@@ -1,0 +1,28 @@
+<h2>Lista de Competencias</h2>
+
+<div *ngIf="competencias.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ID Del multimedial</th>
+        <th>Tipo</th>
+        <th>Nombre</th>
+        <th>Nivel de Destreza</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let competencia of competencias">
+        <td>{{ competencia.id}}</td>
+        <td>{{ competencia.multimedial_id}}</td>
+        <td>{{ competencia.tipo_competencia}}</td>
+        <td>{{ competencia.nombre_competencia }}</td>
+        <td>{{ competencia.nivel_destreza }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="competencias.length === 0">
+  <p>No hay competencias disponibles.</p>
+</div>
