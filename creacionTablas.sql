@@ -36,10 +36,10 @@ INSERT INTO Educational_Level (level_name) VALUES
     ('TERCIARIO_INCOMP');
 
 -- Inserts para Multimedial
-INSERT INTO Multimedial (username, password, email, address, birthdate, educational_level_id, graduation_institution, profile_photo, competencia_id) VALUES
-    ('usuario1', 'contraseña1', 'usuario1@example.com', 'Dirección 1', '1990-01-01', 1, 'Universidad A', 'url_foto1', 1),
-    ('usuario2', 'contraseña2', 'usuario2@example.com', 'Dirección 2', '1995-05-15', 2, 'Universidad B', 'url_foto2', 2),
-    ('usuario3', 'contraseña3', 'usuario3@example.com', 'Dirección 3', '2000-10-30', 3, 'Universidad C', 'url_foto3', 3);
+INSERT INTO Multimedial (username, password, email, address, birthdate, educational_level_id, graduation_institution, profile_photo) VALUES
+    ('usuario1', 'contraseña1', 'usuario1@example.com', 'Dirección 1', '1990-01-01', 1, 'Universidad A', 'url_foto1'),
+    ('usuario2', 'contraseña2', 'usuario2@example.com', 'Dirección 2', '1995-05-15', 2, 'Universidad B', 'url_foto2'),
+    ('usuario3', 'contraseña3', 'usuario3@example.com', 'Dirección 3', '2000-10-30', 3, 'Universidad C', 'url_foto3');
 
 -- Inserts para Competencias
 INSERT INTO Competencias (multimedial_id, tipo_competencia, nombre_competencia, nivel_destreza) VALUES
