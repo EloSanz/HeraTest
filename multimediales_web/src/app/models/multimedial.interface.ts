@@ -3,7 +3,7 @@ export interface Multimedial{
     username: string;
     password: string;
     email: string;
-    birthdate: string;
+    birthdate: Date;
     address: string;
     educational_level_id: number;
     graduation_institution: string;
