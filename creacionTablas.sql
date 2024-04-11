@@ -26,7 +26,11 @@ CREATE TABLE Competencias (
     nivel_destreza INTEGER CHECK (nivel_destreza >= 10 AND nivel_destreza <= 50)
 );
 
----------------------------------- Inserts de prueba ----------------------------------
+CREATE TABLE tipo_competencia (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL
+);
+---------- Inserts de prueba ----------------------------------
 
 -- Inserts para Educational_Level
 INSERT INTO Educational_Level (level_name) VALUES 
@@ -50,6 +54,12 @@ INSERT INTO Competencias (multimedial_id, tipo_competencia, nombre_competencia, 
     (3, 'EDICION_IMAGEN', 'GIMP', 35),
     (3, 'EDICION_IMAGEN', 'CorelDRAW', 40);
 
+INSERT INTO tipo_competencia (nombre) VALUES
+    ('EDICION_VIDEO'),
+    ('EDICION_IMAGEN'),
+    ('EDICION_TEXTO'),
+    ('EDICION_PPT');
+------------------------
 ---------------------------------- Vista para mostrar las competencias de cada multimedial junto con su nivel de destreza: ----------------------------------
 CREATE VIEW Multimedial_Competencias AS
 SELECT m.id AS multimedial_id, m.username, e.level_name AS educational_level,
