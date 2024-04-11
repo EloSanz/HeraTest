@@ -16,20 +16,21 @@ CREATE TABLE Multimedial (
     graduation_institution VARCHAR(255),
     profile_photo TEXT
 );
-
+-- Crear tabla Tipo de competencias
+CREATE TABLE Tipo_competencia (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL
+);
 -- Crear tabla Competencias
 CREATE TABLE Competencias (
     id SERIAL PRIMARY KEY,
     multimedial_id INTEGER REFERENCES Multimedial(id),
-    tipo_competencia VARCHAR(100) NOT NULL,
+    tipo_competencia INTEGER REFERENCES TipoCompetencia(id),
     nombre_competencia VARCHAR(100) NOT NULL,
     nivel_destreza INTEGER CHECK (nivel_destreza >= 10 AND nivel_destreza <= 50)
 );
 
-CREATE TABLE tipo_competencia (
-    id SERIAL PRIMARY KEY,
-    nombre VARCHAR(255) NOT NULL
-);
+
 ---------- Inserts de prueba ----------------------------------
 
 -- Inserts para Educational_Level
@@ -54,7 +55,7 @@ INSERT INTO Competencias (multimedial_id, tipo_competencia, nombre_competencia, 
     (3, 'EDICION_IMAGEN', 'GIMP', 35),
     (3, 'EDICION_IMAGEN', 'CorelDRAW', 40);
 
-INSERT INTO tipo_competencia (nombre) VALUES
+INSERT INTO Tipo_competencia (nombre) VALUES
     ('EDICION_VIDEO'),
     ('EDICION_IMAGEN'),
     ('EDICION_TEXTO'),
