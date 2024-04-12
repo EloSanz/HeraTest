@@ -25,7 +25,7 @@ CREATE TABLE Tipo_competencia (
 CREATE TABLE Competencias (
     id SERIAL PRIMARY KEY,
     multimedial_id INTEGER REFERENCES Multimedial(id),
-    tipo_competencia INTEGER REFERENCES TipoCompetencia(id),
+    tipo_competencia INTEGER REFERENCES Tipo_competencia(id),
     nombre_competencia VARCHAR(100) NOT NULL,
     nivel_destreza INTEGER CHECK (nivel_destreza >= 10 AND nivel_destreza <= 50)
 );
@@ -46,20 +46,24 @@ INSERT INTO Multimedial (username, password, email, address, birthdate, educatio
     ('usuario2', 'contraseña2', 'usuario2@example.com', 'Dirección 2', '1995-05-15', 2, 'Universidad B', 'url_foto2'),
     ('usuario3', 'contraseña3', 'usuario3@example.com', 'Dirección 3', '2000-10-30', 3, 'Universidad C', 'url_foto3');
 
--- Inserts para Competencias
-INSERT INTO Competencias (multimedial_id, tipo_competencia, nombre_competencia, nivel_destreza) VALUES
-    (1, 'EDICION_VIDEO', 'Adobe Premiere', 40),
-    (1, 'EDICION_VIDEO', 'Final Cut Pro', 45),
-    (2, 'EDICION_VIDEO', 'DaVinci Resolve', 50),
-    (2, 'EDICION_IMAGEN', 'Adobe Photoshop', 45),
-    (3, 'EDICION_IMAGEN', 'GIMP', 35),
-    (3, 'EDICION_IMAGEN', 'CorelDRAW', 40);
+--ALTER SEQUENCE multimedial_id_seq RESTART WITH 1;
+
+
 
 INSERT INTO Tipo_competencia (nombre) VALUES
     ('EDICION_VIDEO'),
     ('EDICION_IMAGEN'),
     ('EDICION_TEXTO'),
     ('EDICION_PPT');
+-- Inserts para Competencias
+INSERT INTO Competencias (multimedial_id, tipo_competencia, nombre_competencia, nivel_destreza) VALUES
+    (1, 1, 'Adobe Premiere', 40),
+    (1, 1, 'Final Cut Pro', 45),
+    (2, 1, 'DaVinci Resolve', 50),
+    (2, 2, 'Adobe Photoshop', 45),
+    (3, 2, 'GIMP', 35),
+    (3, 2, 'CorelDRAW', 40);
+
 ------------------------
 ---------------------------------- Vista para mostrar las competencias de cada multimedial junto con su nivel de destreza: ----------------------------------
 CREATE VIEW Multimedial_Competencias AS
