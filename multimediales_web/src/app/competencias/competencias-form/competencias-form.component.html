@@ -1,0 +1,38 @@
+<h2 class="mb-5">Crear Competencia </h2>
+
+<div>
+  <button class="btn btn-primary" routerLink="/">Menú</button>
+</div>
+
+
+<div class="row row-cols-3 justify-content-center">
+  <form [formGroup]="form" (ngSubmit)="create()">
+    
+    <div class="mb-3">
+      <label for="tipo_competencia">Tipo de Competencia</label>
+      <select id="tipo_competencia" class="form-control" formControlName="tipo_competencia">
+          <option value="1">EDICION_VIDEO</option>
+          <option value="2">EDICION_IMAGEN</option>
+          <option value="3">EDICION_TEXTO</option>
+          <option value="4">EDICION_PPT</option>
+      </select>
+  </div>
+
+    <div class="mb-3">
+      <label for="nombre_competencia">Nombre de la Competencia</label>
+      <input id="nombre_competencia" type="text" placeholder="Nombre de la Competencia" class="form-control" formControlName="nombre_competencia">
+    </div>
+
+    <div class="mb-3">
+      <label for="nivel_destreza">Nivel de Destreza</label>
+      <input id="nivel_destreza" type="number" placeholder="Nivel de Destreza" class="form-control" formControlName="nivel_destreza">
+    </div>
+
+    <div class="text-end">
+      <button type="button" class="btn btn-light" routerLink="/">Cancelar</button>
+      <button class="btn btn-primary ms-2">Crear Competencia</button>
+    </div>
+    
+    
+  </form>
+</div>

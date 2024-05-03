@@ -1,7 +1,7 @@
 export interface Competencias{
     id: number;
-    multimedial_id: number;
-    tipo_competencia: string;
+    multimedialId: number;
+    tipo_competencia: number;
     nombre_competencia: string;
     nivel_destreza: number;
 }

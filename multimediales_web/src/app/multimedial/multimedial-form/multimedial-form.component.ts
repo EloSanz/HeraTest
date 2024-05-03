@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { MultimedialService } from '../services/multimedial.service';
+import { MultimedialService } from '../../services/multimedial.service';
 
 @Component({
   selector: 'app-multimedial-form',
@@ -30,7 +30,7 @@ export default class MultimedialFormComponent {
     const multimedial = this.form.value;
     this.multimedialService.create(multimedial).subscribe(
       () => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/multimediales']);
       });
   }
 }
